@@ -1,25 +1,35 @@
 import React, { Component } from "react";
 import {connect} from "react-redux"
 import {fetchSmurfs} from "./actions/index"
-
+import {BrowserRouter as Router,Route} from 'react-router-dom'
 import AddForm from './components/AddForm';
 import SmurfList from './components/SmurfList';
 import Header from './components/Header';
-
+import Profilepage from './components/smurfProfile'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 
 class App extends Component {
-  render() {
+  componentDidMount(){
     this.props.fetchSmurfs()
+  }
+  render() {
+   
     return (
+      <Router>
       <div className="App">
         <Header />
         <main>
+          <Route exact path="/">
           <SmurfList/>
           <AddForm/>
+          </Route>
         </main>
+        <Route exact path="/Profile">
+          <Profilepage/>
+        </Route>
       </div>
+      </Router>
     );
   }
 }
