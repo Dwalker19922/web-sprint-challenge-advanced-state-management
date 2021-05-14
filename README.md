@@ -22,19 +22,19 @@ In this challenge, you are to build a Smurfs village database utilizing Redux as
 
 ### Task 1: Project Setup
 
-* [ ] Fork and clone this repository.
-* [ ] Create a new working branch: git checkout -b `<firstName-lastName>`.
-* [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-* [ ] Push commits: git push origin `<firstName-lastName>`.
-* [ ] **RUN** `npm install` to install your dependencies.
-* [ ] **RUN** `npm start` to start your application.
+* [d ] Fork and clone this repository.
+* [d ] Create a new working branch: git checkout -b `<firstName-lastName>`.
+* [d ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
+* [d ] Push commits: git push origin `<firstName-lastName>`.
+* [d ] **RUN** `npm install` to install your dependencies.
+* [d ] **RUN** `npm start` to start your application.
 
 ### Task 2: CodeGrade Setup
 
-* [ ] Open the assignment in Canvas and following along with the attached document [here.](https://www.notion.so/lambdaschool/Submitting-an-assignment-via-Code-Grade-A-Step-by-Step-Walkthrough-07bd65f5f8364e709ecb5064735ce374).
-* [ ] Follow instructions to set up Codegrade's Webhook and Deploy Key, making sure your deployment is set to your `<firstName-lastName>`.
-* [ ] Push your first commit: `git commit --allow-empty -m "first commit" && git push`
-* [ ] Check to see that Codegrade has accepted your git submission.
+* [d ] Open the assignment in Canvas and following along with the attached document [here.](https://www.notion.so/lambdaschool/Submitting-an-assignment-via-Code-Grade-A-Step-by-Step-Walkthrough-07bd65f5f8364e709ecb5064735ce374).
+* [ d] Follow instructions to set up Codegrade's Webhook and Deploy Key, making sure your deployment is set to your `<firstName-lastName>`.
+* [ d] Push your first commit: `git commit --allow-empty -m "first commit" && git push`
+* [d ] Check to see that Codegrade has accepted your git submission.
 
 ### Task 3: Project Requirements
 
