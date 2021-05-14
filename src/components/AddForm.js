@@ -10,7 +10,9 @@ const AddForm = (props) => {
         nickname:"",
         description:""
     });
+
     const startTimer=()=>{return state.name!==""|| state.position!==""||state.nickname!==""? setTimeout(function(){ setError("") }, 1000):null;}
+    
     const handleChange = e => {
         setState({
             ...state,
@@ -30,6 +32,7 @@ const AddForm = (props) => {
     
 
     return(<section>
+
         <h2>Add Smurf</h2>
         <form onSubmit={handleSubmit}>
             <div className="form-group">
@@ -53,6 +56,7 @@ const AddForm = (props) => {
             }
             <button>Submit Smurf</button>
         </form>
+
     </section>);
 }
 
@@ -60,12 +64,14 @@ const mapActionsToProps={
     addSmurf,
     setError,
 }
+
 const mapStateToProps=(state)=>{
     console.log(state)
     return({
         errorMessage:state.formError
     })
 }
+
 export default connect(mapStateToProps,mapActionsToProps)(AddForm);
 
 //Task List:

@@ -1,4 +1,5 @@
 import {FETCH_START, FETCH_SUCCESS,FETCH_FAIL,ADD_SMURF,SET_FETCH_ERROR} from '../actions/index'
+
 export const initialState = {
  isLoading: false,
  fetchError:"",
@@ -6,34 +7,40 @@ export const initialState = {
  data:[]  
 }
 const reducer = (state=initialState,action)=>{
+
     switch(action.type) {
         case(FETCH_START):
         return({
             ...state,
             isLoading:action.payload
         })
+
         case(FETCH_SUCCESS):
         return({
             ...state,
             isLoading:false,
             data:action.payload
         })
+
         case(FETCH_FAIL):
         return({
             ...state,
             isLoading:false,
             error:action.payload
         })
+
         case(ADD_SMURF):
         return({
             ...state,
             data:[...state.data,action.payload]
         })
+
         case(SET_FETCH_ERROR):
         return({
             ...state,
             formError:action.payload
         })
+
         default:
             return(state)
     }

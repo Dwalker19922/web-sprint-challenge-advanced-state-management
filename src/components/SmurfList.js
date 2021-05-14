@@ -1,8 +1,11 @@
 import React from 'react';
-import Smurf from './Smurf';
 import {connect} from 'react-redux'
+
+import Smurf from './Smurf';
+
  const SmurfList = (props)=> {
     const {isLoading,smurfData} = props
+
     if (isLoading) {
         return <h1>Loading...</h1>;
     }
@@ -11,6 +14,7 @@ import {connect} from 'react-redux'
     {smurfData.map((item)=>{return(<Smurf key={item.id} smurf={item}/>)})}
     </div>);
 }
+
 const mapStateToProps=(state)=>{
     return{
         isLoading:state.isLoading,
