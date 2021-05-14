@@ -1,10 +1,10 @@
-import {FETCH_START, FETCH_SUCCESS,FETCH_FAIL,ADD_SMURF,SET_FETCH_ERROR} from '../actions/index'
-
+import {FETCH_START, FETCH_SUCCESS,FETCH_FAIL,ADD_SMURF,SET_FETCH_ERROR, PROFILE_TRUE} from '../actions/index'
 export const initialState = {
  isLoading: false,
  fetchError:"",
  formError:"",
- data:[]  
+ data:[],
+ profilePage:false,
 }
 const reducer = (state=initialState,action)=>{
 
@@ -32,7 +32,7 @@ const reducer = (state=initialState,action)=>{
         case(ADD_SMURF):
         return({
             ...state,
-            data:[...state.data,action.payload]
+            data:[...state.data,action.payload],
         })
 
         case(SET_FETCH_ERROR):
@@ -40,7 +40,11 @@ const reducer = (state=initialState,action)=>{
             ...state,
             formError:action.payload
         })
-
+        case(PROFILE_TRUE):
+        return({
+            ...state,
+            profilePage:action.payload
+        })
         default:
             return(state)
     }

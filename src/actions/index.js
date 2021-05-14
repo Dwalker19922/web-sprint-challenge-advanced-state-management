@@ -6,6 +6,7 @@ export const FETCH_SUCCESS="FETCH_SUCCESS"
 export const FETCH_FAIL ="FETCH_FAIL"
 export const ADD_SMURF="ADD_SMURF"
 export const SET_FETCH_ERROR="SET_FETCH_ERROR"
+export const PROFILE_TRUE="PROFILE_TRUE"
 
 
 
@@ -39,13 +40,15 @@ export const fetchSmurfs =()=>{
 
 
 export const addSmurf=(newSmurf)=>{
-    console.log(newSmurf)
-    return({type:ADD_SMURF,payload:newSmurf})
+    const randomN=Math.floor(Math.random() * 101) *Math.floor(Math.random() * 101)
+    return({type:ADD_SMURF,payload:newSmurf,id:randomN})
 }
 export const setError=(value)=>{
     return({type:SET_FETCH_ERROR,payload:value})
 }
-
+export const setProfile=(boolean)=>{
+    return({type:PROFILE_TRUE,payload:boolean})
+}
 
 
 //Task List:

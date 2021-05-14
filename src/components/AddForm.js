@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import {addSmurf,setError} from '../actions/index'
-
 const AddForm = (props) => {
-    const{errorMessage,addSmurf,setError}=props
+    const{errorMessage,addSmurf,setError,uid}=props
     const [state, setState] = useState({
         name:"",
         position:"",
         nickname:"",
-        description:""
+        description:"",
+        id:5
     });
 
     const startTimer=()=>{return state.name!==""|| state.position!==""||state.nickname!==""? setTimeout(function(){ setError("") }, 1000):null;}
@@ -20,12 +20,11 @@ const AddForm = (props) => {
         });
         startTimer()
     }
-
     const handleSubmit = e => {
         e.preventDefault();
         if (state.name === "" || state.position === "" || state.nickname === "") {
             setError("Name, position and nickname fields are required.");
-            
+        
         }
        else{addSmurf(state)}
     }
@@ -68,7 +67,7 @@ const mapActionsToProps={
 const mapStateToProps=(state)=>{
     console.log(state)
     return({
-        errorMessage:state.formError
+        errorMessage:state.formError,
     })
 }
 

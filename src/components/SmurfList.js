@@ -1,11 +1,12 @@
 import React from 'react';
 import {connect} from 'react-redux'
+import{setProfile} from '../actions/index'
 
 import Smurf from './Smurf';
 
  const SmurfList = (props)=> {
-    const {isLoading,smurfData} = props
-
+    const {isLoading,smurfData,setProfile} = props
+    setProfile(false)
     if (isLoading) {
         return <h1>Loading...</h1>;
     }
@@ -22,7 +23,10 @@ const mapStateToProps=(state)=>{
 
     }
 }
-export default connect(mapStateToProps)(SmurfList);
+const mapActionsToProps={
+setProfile
+}
+export default connect(mapStateToProps,mapActionsToProps)(SmurfList);
 
 //Task List:
 //1. Connect the smurfs and loading state values to the SmurfList component.*

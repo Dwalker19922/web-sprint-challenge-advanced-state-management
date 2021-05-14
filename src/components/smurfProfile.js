@@ -1,8 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import SmurfList from './SmurfList'
+import {Link,Route} from 'react-router-dom'
+import{setProfile} from '../actions/index'
+import Profile from './Profile'
 function Profilepage(props){
-    const {smurfData}=props
+    const {smurfData,setProfile}=props
+    setProfile(true)
+    const handleClick=()=>{
+      console.log("click")  
+    }
     return(
         <div>
             <div>
@@ -12,14 +18,23 @@ function Profilepage(props){
                 <h5>CLICK ON A SMURFS NAME TO VEIW THEIR PROFILE</h5>
             </div>
             <div>
-            {!smurfData?<div></div>:smurfData.map((item)=>{return(<p>{item.name}</p>)})}
+            {!smurfData?<div></div>:smurfData.map((item)=>{
+                return(
+                <div>
+                <Link to={`/Profile/${item.id}`}>
+                <p className="profileList" onClick={handleClick}>
+                {item.name}</p></Link>
+                </div>)})}
             </div>
         </div>
     )
 }
 const mapStateToProps=(state)=>{
     return{
-        smurfData:state.data
+        smurfData:state.data,
     }
 }
-export default connect(mapStateToProps)(Profilepage)
+const mapActionsToProps={
+    setProfile
+}
+export default connect(mapStateToProps,mapActionsToProps)(Profilepage)
