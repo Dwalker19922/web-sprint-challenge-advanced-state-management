@@ -16,21 +16,22 @@ export const fetchSuccess=(smurfData)=>{
 export const fetchFail=(error)=>{
     return({type:FETCH_FAIL, payload:error})
 }
+
 export const fetchSmurfs =()=>{
     return(dispatch=>{
     dispatch({type:FETCH_START});
     dispatch(fetchStart());
     axios.get( `http://localhost:3333/smurfs`)
     .then((response)=>{
-        dispatch(fetchSuccess(response))
+        dispatch(fetchSuccess(response.data))
     })
     .catch((error)=>{
-        console.log(error);
         dispatch(fetchFail(error))   
     })
 })
 }
 export const addSmurf=(newSmurf)=>{
+    console.log(newSmurf)
     return({type:ADD_SMURF,payload:newSmurf})
 }
 export const setError=(value)=>{

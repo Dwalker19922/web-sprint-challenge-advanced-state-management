@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component,useEffect } from "react";
 import {connect} from "react-redux"
 import {fetchSmurfs,addSmurf} from "./actions/index"
 import AddForm from './components/AddForm';
@@ -9,6 +9,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 
 class App extends Component {
+
+    
+
+
+
   render() {
     this.props.fetchSmurfs()
     return (
